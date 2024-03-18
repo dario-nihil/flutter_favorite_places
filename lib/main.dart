@@ -44,18 +44,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Great Places',
       theme: theme,
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Your Places'),
-          actions: [
-            IconButton(
-              onPressed: onAddPlace,
-              icon: const Icon(Icons.add),
-            ),
-          ],
-        ),
-        body: const PlacesScreen(),
-      ),
+      home: const PlacesScreen(),
     );
   }
 }
