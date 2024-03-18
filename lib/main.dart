@@ -1,3 +1,4 @@
+import 'package:favorite_places/screens/places.dart';
 import 'package:flutter/material.dart';
 
 import 'package:google_fonts/google_fonts.dart';
@@ -32,7 +33,9 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
+
+  void onAddPlace() {}
 
   @override
   Widget build(BuildContext context) {
@@ -42,13 +45,14 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         appBar: AppBar(
           title: const Text('Your Places'),
+          actions: [
+            IconButton(
+              onPressed: onAddPlace,
+              icon: const Icon(Icons.add),
+            ),
+          ],
         ),
-        body: const Center(
-          child: Text(
-            'No places added yet',
-            style: TextStyle(color: Colors.white),
-          ),
-        ),
+        body: const PlacesScreen(),
       ),
     );
   }
